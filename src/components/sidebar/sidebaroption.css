@@ -1,0 +1,24 @@
+.sidebar_option {
+  color: grey;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 200ms color ease-in;
+  height: 40px;
+}
+
+.sidebar_option:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.sidebar_option > h4 {
+  margin-top: 10px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.sidebaroption_icon {
+  padding: 0 10px;
+}
