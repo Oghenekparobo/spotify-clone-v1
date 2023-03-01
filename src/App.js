@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 import { useEffect } from "react";
 import SpotifyWebApi from "spotify-web-api-js";
@@ -11,7 +11,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   // const [token, setToken] = useState(null);
-  const [{ user, token , playlists}, dispatch] = useDataLayerValue();
+  const [{ user, token }, dispatch] = useDataLayerValue();
 
   useEffect(() => {
     // auth object gotten from spotify authentication
@@ -48,14 +48,29 @@ function App() {
             playlists: playlists,
           });
         });
+
+        // get playlists
+        spotify
+          .getPlaylist("37i9dQZF1DWXq6zX9dQEzo")
+          .then((response) => {
+            // console.log(response + "oh wait and see");
+            dispatch({
+              type: "SET_DISCOVER_WEEKLY",
+              discover_weekly: response,
+            });
+          })
+          .catch((error) => {
+            console.error(error);
+          });
       });
     }
-
   }, [dispatch, user]);
 
-
-  console.log(playlists + 'play');
-  return <div className="App">{!token ? <Login /> : <Player />}</div>;
+  return (
+    <div className="App">
+      {!token ? <Login /> : <Player spotify={spotify} />}
+    </div>
+  );
 }
 
 export default App;

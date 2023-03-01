@@ -1,7 +1,49 @@
 .body {
-  height: 100vh;
+  height: 100%;
   width: 100%;
   padding: 30px;
   flex: 0.8;
-  background: linear-gradient(transparent, rgb(91, 87, 115) rgba(0, 0, 0, 1));
+  background: linear-gradient(transparent,rgba(0 , 89 ,99 , 0.5) rgb(2, 85, 34)) !important;
+  text-transform: capitalize;
+}
+
+.body_info > img {
+  height: 20vw;
+  margin: 0 20px;
+  box-shadow: 0 4px 60px rgba(0, 0, 0, 0.5);
+}
+
+.body_info {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  flex: 1;
+  align-items: center;
+  /* justify-content: center; */
+  color: white;
+}
+
+.body_infoText > h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.body_infoText > p {
+  font-size: 14px;
+}
+
+.body_icons {
+  display: flex;
+  color: white;
+  align-items: center;
+}
+.body_icons > .MuiSvgIcon-root {
+  transition:all 2ms ease-in-out;
+  margin: 10px 30px;
+  font-size: 49px;
+  cursor: pointer;
+}
+
+.body_icons > .MuiSvgIcon-root:hover {
+  color: green;
 }
